@@ -1,0 +1,42 @@
+
+faire tous les return
+gerer : on est dans un fichier a - on cree un fichier b - on va dans ce fichier b - on supprime le fichier a :: on ne doit pas segfaulter
+
+unset PATH puis commande hors builtin
+si ls sans unset notre PATH s'affiche mais pas si on unset avant, on ne va pas jusqu'au launch builtin or bin
+
+Q : si on unset le pwd : quelle reaction ? on s'en fout ou on doit reproduire ?
+sauvegarder en statique le PWD ?
+
+check path exist  USER et pas $USER
+pour gerer l'expand dans le heredoc
+
+echo "********************************" >> $toto
+echo "dshef" >> $toto
+tourne en boucle
+echo toto > $toto  devrait creer un fichier appele expand de $toto rempli avec toto
+ls > $toto ne marche pas : pb dans le split
+
+// cd ///
+probleme de prsing : echo toto> tutut< >> <<
+=====>pas de probleme de parsing, print wintabline tout est ok idem au niveau des tailles, probleme ailleurs
+
+gere les cmd avec les guilleets ex : "echo toto" : c'est ok ca pour moi (claire) non ?
+=====> sur pc de la maison j'ai des erreurs still reachable
+
+check error Makefile 77 leak
+
+voir dans ft_check_variable_path(t_split *split) ?
+// pb au niveau des "" 
+
+
+
+// lldb
+lldb ./minishell 
+b ft_launch_cmd
+run
+/bin/echo toto | /bin/ls
+n
+s (pour rentrer dans une fonction)
+fr v nomdelavariable (pour voir sa value)
+
